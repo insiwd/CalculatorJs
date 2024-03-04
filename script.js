@@ -35,8 +35,18 @@ function buttonClick(event) {
             else if (expression !== '' && !isLastCharOperator()) {
                 addValue(value);
             }
+            break;
         case 'submit':
             submit();
+            break;
+        case 'negate':
+            negate();
+            break;
+        case 'mod':
+            percentage();
+            break;
+        case 'decimal':
+            decimal(value);
             break;
     }
 
@@ -85,4 +95,38 @@ function evaluateExpression() {
     : evalResult < 1 
     ? parseFloat(evalResult.toFixed(10))
     : parseFloat(evalResult.toFixed(2));
+}
+
+function negate() {
+    // negate the result if expression is empty or result is presente
+    if (expression === '' && result !== '') {
+        result = -result;
+    }
+    else if (!expression.startsWith('-') && expression !== '') {
+        expression = '-' + expression;
+    }
+    else if (expression.startsWith('-')) {
+        expression = expression.slice(1);
+    }
+}
+
+function percentage() {
+    // evaluate the expression
+    if (expression !== '') {
+        result = evaluateExpression();
+        expression = '';
+        if (!isNaN(result) && isFinite(result)) {
+            result /= 100;
+        } else {
+            result = '';
+        }
+    } else if (result !== '') {
+        result = parseFloat(result) / 100;
+    }
+}
+
+function decimal(value) {
+    if (!expression.endsWith('.') && !isNaN(expression.slice(-1))) {
+        addValue(value);
+    }
 }
