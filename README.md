@@ -3,9 +3,10 @@
 Uma calculadora no estilo Ios feito em Js, Css e HTML. 
 ###
 Foi baseada nesse figma: https://www.figma.com/community/file/1041082497681424521
-###
-Teste aqui : https://insiwd.github.io/CalculatorJs/
 
+### Teste aqui : https://insiwd.github.io/CalculatorJs/
+
+###
 # Demo
 ![image](https://github.com/insiwd/CalculatorJs/assets/109873022/852d1908-2593-4c2b-8487-ad1b338bb793)
 ![image](https://github.com/insiwd/CalculatorJs/assets/109873022/bb7ef452-fb21-40c5-8010-dec5a117cf8b)
